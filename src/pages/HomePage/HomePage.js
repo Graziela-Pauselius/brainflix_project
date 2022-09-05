@@ -9,6 +9,8 @@ import VideoInfo from "../../components/VideoInfo/VideoInfo";
 
 import "./HomePage.scss";
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 const HomePage = () => {
 	const [currentVideo, setCurrentVideo] = useState(null);
 	const [videoDataDetails, setVideoDataDetails] = useState({});
@@ -20,7 +22,7 @@ const HomePage = () => {
 	useEffect(() => {
 		const getVideoListData = async () => {
 			try {
-				const response = await axios.get(`http://localhost:8080/videos`);
+				const response = await axios.get(`${API_URL}/videos`);
 
 				const videoIdData = await response.data.data.videos[0].id;
 				setCurrentVideo(videoIdData);
@@ -40,9 +42,7 @@ const HomePage = () => {
 	useEffect(() => {
 		const getVideoDetailsData = async () => {
 			try {
-				const response = await axios.get(
-					`http://localhost:8080/videos/${videoUrlId}`
-				);
+				const response = await axios.get(`${API_URL}/videos/${videoUrlId}`);
 
 				const data = await response.data.data.video;
 				setVideoDataDetails(data);

@@ -6,6 +6,8 @@ import Button from "../Button/Button";
 
 import "./UploadVideo.scss";
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 const UploadVideo = () => {
 	const [videosList, setVideosList] = useState([]);
 
@@ -16,7 +18,7 @@ const UploadVideo = () => {
 	useEffect(() => {
 		const getPostData = async () => {
 			try {
-				const response = await axios.get("http://localhost:8080/videos");
+				const response = await axios.get(`${API_URL}/videos`);
 
 				const videoListData = await response.data.data.videos;
 				setVideosList(videoListData);
@@ -36,7 +38,7 @@ const UploadVideo = () => {
 		};
 
 		axios
-			.post("http://localhost:8080/videos", newVideo)
+			.post(`${API_URL}/videos`, newVideo)
 			.then((res) => {
 				setVideosList([...videosList, newVideo]);
 			})
@@ -54,7 +56,7 @@ const UploadVideo = () => {
 					<h2 className="upload__label">VIDEO THUBNAIL</h2>
 					<img
 						className="upload__img"
-						src="http://localhost:8080/upload.jpg"
+						src={`${API_URL}/upload.jpg`}
 						alt="upload"
 					/>
 				</div>

@@ -1,0 +1,55 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/global" as *;
+
+.next-video-card {
+	&__container {
+		display: flex;
+		margin: 1rem 0;
+	}
+
+	&__info-container {
+		margin-left: 1rem;
+		width: 60%;
+	}
+
+	&__title {
+		margin: 0;
+		@include text-subheader-mobile;
+
+		@include tablet {
+			width: 45%;
+			@include text-subheader-tablet;
+		}
+
+		@include desktop {
+			width: 80%;
+		}
+	}
+
+	&__channel {
+		@include text-body-mobile;
+
+		@include tablet {
+			@include text-body-tablet;
+		}
+	}
+	&__img {
+		width: 6.3rem;
+		height: 4rem;
+		border-radius: 4px;
+		background-position: center;
+		background-size: contain;
+		background-repeat: no-repeat;
+
+		@include tablet {
+			width: 8rem;
+			height: 4.7rem;
+		}
+
+		@include desktop {
+			width: 7rem;
+			height: 4rem;
+		}
+	}
+}

@@ -1,0 +1,49 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/global" as *;
+
+.button {
+	height: 2.5rem;
+	width: 100%;
+	border-radius: 0.3rem;
+	background-color: $main-blue;
+	color: $white;
+	border: none;
+	align-items: center;
+	margin: 1rem 0;
+
+	&:hover {
+		background-color: $dark-blue;
+	}
+
+	@include tablet {
+		width: 9.4rem;
+		margin: 0;
+		order: 3;
+	}
+
+	&.upload {
+		background-image: url("../../assets/icons/upload.svg");
+		background-repeat: no-repeat;
+		background-position: bottom 8px left 10px;
+	}
+
+	&.comment {
+		background-image: url("../../assets/icons/add_comment.svg");
+		background-repeat: no-repeat;
+		background-position: bottom 8px left 10px;
+		padding-left: 1rem;
+	}
+
+	&.publish {
+		background-image: url("../../assets/icons/publish.svg");
+		background-repeat: no-repeat;
+		background-position: bottom 8px left 10px;
+		padding-left: 1rem;
+	}
+
+	&.inverted {
+		background-color: $white;
+		color: $main-blue;
+	}
+}

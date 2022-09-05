@@ -1,0 +1,26 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/global" as *;
+
+.video {
+	width: 100vw;
+
+	@include tablet {
+		width: 90vw;
+		height: 82vh;
+	}
+
+	@include desktop {
+		width: 70vw;
+		height: 100vh;
+	}
+
+	&__container {
+		background-color: $dark-black;
+
+		@include tablet {
+			display: flex;
+			justify-content: center;
+		}
+	}
+}

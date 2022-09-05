@@ -1,0 +1,16 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/global" as *;
+
+.comments {
+	@include tablet {
+		margin-top: 3rem;
+	}
+	&__title {
+		@include text-subheader-mobile;
+
+		@include tablet {
+			@include text-subheader-tablet;
+		}
+	}
+}

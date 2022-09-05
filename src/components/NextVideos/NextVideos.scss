@@ -1,0 +1,29 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/global" as *;
+
+.next-videos {
+	border-top: 1px solid $mercury;
+
+	@include desktop {
+		padding-left: 5%;
+		padding-right: 0;
+		padding-top: 1.5rem;
+		padding-bottom: 3rem;
+		border-bottom: 0;
+	}
+
+	&__title {
+		@include text-subheader-mobile;
+		color: $silver;
+
+		@include tablet {
+			@include text-subheader-tablet;
+		}
+	}
+
+	&__link {
+		text-decoration: none;
+		color: $dark-black;
+	}
+}

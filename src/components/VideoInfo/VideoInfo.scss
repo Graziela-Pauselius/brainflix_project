@@ -1,0 +1,87 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/global" as *;
+
+.video {
+	&__info-section {
+		margin-top: 2rem;
+	}
+
+	&__title {
+		@include text-page-mobile;
+
+		@include desktop {
+			margin-bottom: 0;
+		}
+	}
+
+	&__info {
+		border-top: 1px solid $mercury;
+		border-bottom: 1px solid $mercury;
+		padding: 1rem 0;
+		display: flex;
+
+		@include tablet {
+			border-top: 0;
+			justify-content: space-between;
+			padding: 0.3rem 0;
+		}
+	}
+
+	&__info-container {
+		display: flex;
+		flex-direction: column;
+
+		@include tablet {
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+		}
+	}
+
+	&__text {
+		width: 10rem;
+		@include text-body-tablet;
+		color: $silver;
+
+		&--bold {
+			color: $main-brand;
+			font-weight: 600;
+			margin-bottom: 0.3rem;
+		}
+	}
+
+	&__timestamp {
+		width: 10rem;
+		@include text-body-tablet;
+		color: $silver;
+
+		@include tablet {
+			margin-left: 1rem;
+		}
+	}
+
+	&__icon {
+		margin-right: 0.6rem;
+		width: 1.2rem;
+	}
+
+	&__icon-container {
+		@include tablet {
+			margin-left: 1rem;
+		}
+
+		@include desktop {
+			padding-right: 1rem;
+		}
+	}
+
+	&__description {
+		@include text-body-mobile;
+
+		@include tablet {
+			padding-right: 1rem;
+			@include text-body-tablet;
+		}
+	}
+}

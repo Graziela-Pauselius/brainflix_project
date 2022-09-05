@@ -1,0 +1,93 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+
+.upload {
+	margin: 5%;
+	border-top: 1px solid $mercury;
+
+	@include tablet {
+		margin: 1% 5%;
+	}
+
+	@include desktop {
+		margin: 3% 10%;
+	}
+
+	&__form {
+		display: flex;
+		flex-direction: column;
+
+		@include desktop {
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+			border-top: 1px solid $mercury;
+			padding-top: 2rem;
+			border-bottom: 1px solid $mercury;
+			padding-bottom: 2rem;
+		}
+	}
+
+	&__label {
+		margin-top: 1rem;
+		@include text-label-mobile;
+		color: $silver;
+	}
+
+	&__input-container {
+		margin-top: 1rem;
+	}
+
+	&__input {
+		height: 2.25rem;
+		width: 100%;
+		border-radius: 0.3rem;
+		padding: 0.75rem;
+		border: 1px solid $mercury;
+		background-color: $alabaster;
+		margin-top: 0.3rem;
+		margin-bottom: 1rem;
+
+		&:active {
+			border: 5px solid $main-blue;
+		}
+	}
+
+	&__textarea {
+		height: 6rem;
+		width: 100%;
+		border-radius: 0.3rem;
+		padding: 0.75rem;
+		border: 1px solid $mercury;
+		background-color: $alabaster;
+		margin-top: 0.3rem;
+	}
+
+	&__btn-container {
+		@include tablet {
+			display: flex;
+			margin-top: 2rem;
+			padding-top: 1.5rem;
+			flex-direction: row-reverse;
+		}
+	}
+
+	&__img {
+		width: 100%;
+
+		@include tablet {
+			height: 12rem;
+			width: 20rem;
+			border-radius: 0.3rem;
+		}
+
+		&-container {
+			border-top: 1px solid $mercury;
+
+			@include desktop {
+				border-top: 0;
+			}
+		}
+	}
+}

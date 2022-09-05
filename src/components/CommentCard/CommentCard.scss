@@ -1,0 +1,68 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/global" as *;
+
+.comment {
+	&__container {
+		display: flex;
+		align-items: flex-start;
+		border-top: 1px solid $mercury;
+		padding: 1.5rem 0;
+	}
+
+	&__avatar {
+		background-color: $mercury;
+		height: 2.3rem;
+		width: 2.3rem;
+		background-position: center;
+		background-size: cover;
+		border-radius: 50%;
+		margin-top: 0.6rem;
+
+		@include tablet {
+			height: 2.5rem;
+			width: 2.5rem;
+			margin-right: 0.8rem;
+		}
+	}
+
+	&__info {
+		width: 85%;
+		margin-left: 1rem;
+	}
+
+	&__box {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__name {
+		@include text-subheader-mobile;
+
+		@include tablet {
+			@include text-subheader-tablet;
+		}
+
+		@include desktop {
+			margin: 0.3rem 0;
+		}
+	}
+
+	&__timestamp {
+		@include text-body-mobile;
+		color: $silver;
+
+		@include tablet {
+			@include text-body-tablet;
+		}
+	}
+
+	&__text {
+		@include text-body-mobile;
+		margin-top: 0;
+		@include tablet {
+			@include text-body-tablet;
+		}
+	}
+}

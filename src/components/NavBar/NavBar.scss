@@ -1,0 +1,86 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/global" as *;
+.navBar {
+	padding: 0 5%;
+
+	@include tablet {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin: 0.3rem 0;
+	}
+
+	&__logo {
+		padding: 1rem 0;
+
+		&-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		@include tablet {
+			order: 1;
+		}
+	}
+
+	&__container {
+		display: flex;
+		flex-wrap: wrap;
+
+		@include tablet {
+			width: 68%;
+			justify-content: space-between;
+			flex-wrap: unset;
+		}
+
+		@include desktop {
+			width: 42%;
+			margin-right: 4rem;
+		}
+	}
+
+	&__avatar {
+		height: 2.3rem;
+		width: 2.3rem;
+		background-position: center;
+		background-size: cover;
+		border-radius: 50%;
+
+		@include tablet {
+			order: 4;
+		}
+	}
+
+	&__searchBar {
+		height: 2.25rem;
+		width: 80%;
+		background-color: $alabaster;
+		padding: 0.75rem;
+		border-radius: 0.3rem;
+		border: 1px solid $mercury;
+		margin-right: 1rem;
+		background: url("../../assets/icons/search.svg") left no-repeat;
+		background-position: bottom 7px left 8px;
+		padding-left: 2rem;
+
+		@include tablet {
+			width: 15rem;
+			height: 2.5rem;
+			padding: 1rem;
+			margin-right: 1rem;
+			padding-left: 2rem;
+		}
+	}
+
+	&__btn {
+		@include tablet {
+			order: 3;
+		}
+
+		&-link {
+			width: 100%;
+		}
+	}
+}

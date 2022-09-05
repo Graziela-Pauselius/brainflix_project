@@ -1,0 +1,56 @@
+@use "../partials/variables.scss" as *;
+
+@mixin tablet {
+	@media (min-width: $tablet-breakpoint) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media (min-width: $desktop-breakpoint) {
+		@content;
+	}
+}
+
+@mixin text-label-mobile {
+	font-size: 0.75rem;
+	line-height: 1.25rem;
+	font-weight: 700;
+}
+
+/* MOBILE */
+@mixin text-page-mobile {
+	font-size: 1.5rem;
+	line-height: 2rem;
+	font-weight: 700;
+}
+
+@mixin text-subheader-mobile {
+	font-size: 0.8rem;
+	line-height: 1.13rem;
+	font-weight: 700;
+}
+@mixin text-body-mobile {
+	font-size: 0.8rem;
+	line-height: 1.13rem;
+	font-weight: 400;
+}
+
+/* TABLET & DESKTOP */
+@mixin text-page-tablet {
+	font-size: 2rem;
+	line-height: 2.75rem;
+	font-weight: 700;
+}
+
+@mixin text-subheader-tablet {
+	font-size: 0.87rem;
+	line-height: 1.4rem;
+	font-weight: 700;
+}
+
+@mixin text-body-tablet {
+	font-size: 0.87rem;
+	line-height: 1.4rem;
+	font-weight: 400;
+}

@@ -1,0 +1,19 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+
+.content {
+	padding: 0 5%;
+	@include desktop {
+		display: flex;
+		padding-left: 10%;
+	}
+
+	&__central {
+		@include desktop {
+			border-right: 1px solid $mercury;
+			padding-bottom: 3rem;
+			width: 77%;
+		}
+	}
+}

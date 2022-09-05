@@ -1,0 +1,14 @@
+@use "./colors" as *;
+@use "./mixins.scss" as *;
+@use "./topography" as *;
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: "Avenir Next LT Pro";
+}
